@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <p>Todo List</p>
+    </nav>
+    
+    <main>
+        <div class="box">
+            <div class="heading">
+                <p class="title">My Tasks</p>
+                <p>
+                    <img src="./image1.png" alt="img">
+                </p>
+            </div>
+                
+            <div class="top">
+                <input type="text" placeholder="Enter The Task">
+                <button>ADD</button>
+            </div>
+            <p class="taskcount"></p>
+            
+            <div class="last">
+                <!-- <div class="todos">
+                    <div class="sa">
+                        <input class="checkBox" type="checkbox">
+                        <p>Cricket</p>
+                    </div>
+                    <div class="sb">
+                        <span id="green">⬆</span>
+                        <span>
+                            <img src="data:image/png;base64,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" alt="">
+                        </span>
+                        <span id="red">⬇</span>
+                    </div>
+                </div> -->
+
+            </div>
+            <div class="empty-state">
+                <img src="./image2.png" alt="">
+                <!-- <p>No tasks yet</p> -->
+            </div>
+            <button class="deletall">Delete All Tasks</button>
+            
+        </div>
+    </main>
+    
+   
+
+    
+    <script src="./script.js"></script>
+</body>
+</html>
